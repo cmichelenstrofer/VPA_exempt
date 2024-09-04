@@ -35,6 +35,9 @@ jobs:
           lfs: 'true'
           submodules: 'recursive'
           ssh-key: ${{ secrets.git_ssh_key }}
+      - name: checkoutLFS
+        uses: actions/checkout@v2
+      - run: git lfs pull
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
